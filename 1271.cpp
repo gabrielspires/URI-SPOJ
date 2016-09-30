@@ -14,11 +14,12 @@ int main(int argc, char const *argv[]){
 	while(cin >> n >> r, n != 0){
 		numGenoma++;
 
-		for(i=0; i<n; i++) genoma[i] = i+1;
+		for(i=0; i<n; i++) genoma[i] = i+1; //reseta o vetor
+
 		while(r--){
 			cin  >> i >> j;
 
-			for(k=i; k<=j; k++, j--){
+			for(k=i; k<=j; k++, j--){ //faz as inversoes
 				temp = genoma[k-1];
 				genoma[k-1] = genoma[j-1];
 				genoma[j-1] = temp;
@@ -30,7 +31,7 @@ int main(int argc, char const *argv[]){
 
 		while(q--){
 			cin >> consulta;
-			for(i=0; i<n; i++){
+			for(i=0; i<n; i++){ //acha e imprime a posição consultada
 				if(genoma[i] == consulta){
 					cout << i+1 << endl;
 				}
